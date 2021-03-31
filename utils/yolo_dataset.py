@@ -133,14 +133,16 @@ class YOLODataset(Dataset):
             if random.getrandbits(1):
                 tensor_img = tsf.RandomHorizontalFlip(1)(tensor_img)
                 # bbox center align
-                tensor_bboxes[:,0] = w - tensor_bboxes[:,0]
+                if tensor_bboxes.any():
+                    tensor_bboxes[:,0] = w - tensor_bboxes[:,0]
             
         # vertical 0.5
         if mode in ['all', 'vertical']:
             if random.getrandbits(1):
                 tensor_img = tsf.RandomVerticalFlip(1)(tensor_img)
                 # bbox center align
-                tensor_bboxes[:,1] = h - tensor_bboxes[:,1]
+                if tensor_bboxes.any():
+                    tensor_bboxes[:,1] = h - tensor_bboxes[:,1]
 
         return tensor_img, tensor_bboxes
 
