@@ -1,0 +1,15 @@
+# IPython
+*.ipynb
+
+!example.ipynb
+
+# Auto-generated
+.ipynb_checkpoints/
+.vscode/
+__pycache__/
+
+# logs
+logs/
+
+# others
+samples/
