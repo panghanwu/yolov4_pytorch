@@ -84,8 +84,8 @@ class TrainingConfig(Config):
         # total epochs = freeze + unfreeze
         # ------
         self.initial_epoch = 1
-        self.freeze_epochs = 200
-        self.unfreeze_epochs = 3
+        self.freeze_epochs = 0
+        self.unfreeze_epochs = 300
         self.batch_size = 4
         self.learning_rate = 1e-3
 
@@ -152,7 +152,7 @@ class TrainingConfig(Config):
         # ------
         # Threads of dataloader
         # ------
-        self.num_workers = 2
+        self.num_workers = 4
 
         # ------
         # Consine learning rate
